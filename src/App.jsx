@@ -1,25 +1,22 @@
-import React from 'react'
-import './App.css'
-import GitHubRepo from './component/repo'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import RepoData from './component/repoData'
-import ErrorBoundary from './component/ErrorBoundary'
-import NotFound from "./component/404"
+import "./App.css";
+import GitHubRepo from "./components/repo";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import RepoData from "./components/repoData";
+import ErrorBoundary from "./components/ErrorBoundary";
+import NotFound from "./components/404";
 
 const App = () => {
-
   return (
-   <ErrorBoundary>
+    <ErrorBoundary>
       <Router>
-      <Routes>
-        <Route path='/' element={<GitHubRepo />}/>
-        <Route path='/repository/:id' element={<RepoData />} />
-        <Route path='*' element={<NotFound/>} />
-      </Routes>   
-    </Router>
-   </ErrorBoundary>
- 
-  )
-}
+        <Routes>
+          <Route path="/" element={<GitHubRepo />} />
+          <Route path="/repository/:id" element={<RepoData />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </ErrorBoundary>
+  );
+};
 
-export default App
+export default App;
